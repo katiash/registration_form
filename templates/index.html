@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html="utf-8">
+    <head>
+        <title>
+            Basic Validation! Turned Advanced Validation! :-)
+        </title>
+    </head>
+
+    <body>
+        <h1>Please Register Below:</h1>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {%endfor%}
+            {%endif%}
+        {%endwith%}
+        
+        <form method="POST" action='/process'>
+            Email:<input type="text" name="email" placeholder="rebrel@gmail.com">
+            First Name:<input type="text" name="first_name" placeholder="James">
+            Last Name: <input type="text" name="last_name" placeholder="Breland">
+            Password: <input type="password" name="password" placeholder="password">
+            Confirm Password: <input type="password" name="confirm_password" placeholder="password">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
